@@ -5,7 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour {
 
     Rigidbody2D rb;
-    private float movementSpeed = 45;
+    public float movementSpeed = 45;
 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -15,9 +15,6 @@ public class bullet : MonoBehaviour {
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Wall")
-        {
-            Destroy(this.gameObject);
-        }
+        Destroy(this.gameObject);
     }
 }
